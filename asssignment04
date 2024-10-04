@@ -10,7 +10,6 @@ function swapTheme() {
    btn.classList.toggle("button_night");
    btn.classList.toggle("button_day");
 
-
 }
 
 
