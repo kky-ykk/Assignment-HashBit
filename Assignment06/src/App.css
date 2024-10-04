@@ -1,0 +1,38 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+input{
+  padding: 10px;
+  width: 50%;
+}
+
+.add{
+  margin: 0px 15px;
+}
+
+.taskCon{
+  display: flex;
+  color: black;
+  margin: 10%;
+  padding: 5px;
+  border:5px solid black;
+  border-radius: 5px;
+
+}
+
+.task{
+  width: 80%;
+  text-align: left;
+  line-height: 3;
+}
+
+.delete{
+  background-color: red;
+  height: 14%;
+}
+
+

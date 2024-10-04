@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage Layout</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img {
+            width: 100px;
+        }
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        nav a::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: rgb(214, 205, 125);
+            transition: all 0.3s ease-in-out;
+        }
+
+        nav a:hover::before{
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            background-color: #f4f4f4;
+            width: 200px;
+            padding: 15px;
+        }
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .content-box {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .content-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <img src="logo.png" alt="Logo">
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </header>
+
+    <!-- Menubar -->
+    <nav>
+        <a href="#">Home</a> 
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Sidebar</h2>
+            <p>Custom Data goes here</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-box">
+                <h3>Title 1</h3>
+                <img src="https://via.placeholder.com/400" alt="Sample Image">
+                <p>This is a description for the first content box.</p>
+            </div>
+            <div class="content-box">
+                <h3>Title 2</h3>
+                <img src="https://via.placeholder.com/400" alt="Sample Image">
+                <p>This is a description for the second content box.</p>
+            </div>
+            <div class="content-box">
+                <h3>Title 3</h3>
+                <img src="https://via.placeholder.com/400" alt="Sample Image">
+                <p>This is a description for the third content box.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Sample Footer Text</p>
+    </footer>
+
+</body>
+</html>

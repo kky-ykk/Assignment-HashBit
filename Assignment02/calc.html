@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+
+        body{
+            background-color: antiquewhite;
+        }
+
+        .container{
+            text-align: center;
+            
+        }
+
+        input  {
+            margin: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        Num1 :<input type="number" id="num1"> <br>
+        Num2 :<input type="number" id="num2"> <br>
+        
+        <select name="opts" id="opts" >
+            <option value="add">Add</option>
+            <option value="substract">substract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        
+        <button onClick="getResult()" >Get Result</button> <br>
+
+        <div class="result"></div>
+    </div>
+    
+    <script>
+        
+        function getResult() {
+            let num1=+document.querySelector("#num1").value;
+            let num2=+document.querySelector("#num2").value;
+
+            let operation=document.querySelector("#opts").value;
+            let result=document.querySelector(".result");
+
+            console.log(num1+","+num2);
+
+            switch (operation) {
+                case "add":
+                    result.innerText=num1+num2;
+                    break;
+                
+                case "substract":
+                    result.innerText=num1-num2;
+                    break;
+                case "multiply":
+                    result.innerText=num1*num2;
+                    break;
+                case "divide":
+                    result.innerText=num1/num2;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,164 @@
+https://jsfiddle.net/krishna__/xt46op5g/1/
+function swapTheme() {
+//write your code
+	
+  const divMain=document.querySelector("#app");
+   const btn=document.querySelector("#swap");
+   
+   divMain.classList.toggle("night");
+   
+   btn.classList.toggle("button_night");
+   btn.classList.toggle("button_day");
+
+
+}
+
+
+// -------------------------------------------------------------
+https://jsfiddle.net/krishna__/wgtvdkx8/12/
+//Write your code here
+function createDiv(width, height, text) {
+	const con=document.querySelector("#container");
+  const eleDiv=document.createElement("div");
+  eleDiv.style.width = width+"px";
+  eleDiv.style.height=height+"px";
+  eleDiv.innerHTML=text;
+  
+  con.appendChild(eleDiv);
+    
+}
+
+createDiv(100,200,"hello");
+
+// Do not change this code
+Window.createDiv = createDiv;
+
+
+// ----------------------------------------------------------------------------
+https://jsfiddle.net/krishna__/bv28eh1t/4/
+
+// your js code goes here
+function toggleVisibility() {
+    const ele=document.querySelector("#useless-paragraph");
+		
+    ele.classList.toggle("up");
+
+}
+
+
+
+// ---------------------------------------------------
+https://jsfiddle.net/krishna__/wypqLm6r/66/
+
+
+// html
+
+{/* <div class='text-here' id='text-container'>This is some example text</div>
+
+
+<input type="text" id="colorbox">
+
+<button id="colorchange">Change Colour</button>
+
+<br><br>
+
+<input type="range" id="fontsize" min="10" max="100" value="55">
+<br><br>
+
+
+<button id="italic" class="stylebt" onClick="chngTextFamily('italics')">Italics</button>
+<button id="underline" class="stylebt" onClick="chngTextDec('Underline')">Underline</button>
+<button id="bold" class="stylebt" onClick="chngTextWeight('Bold')">Bold</button>
+
+<br><br>
+
+
+<select id="list" onChange="chngTextStyle()">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+    </select>
+
+
+<br><br>
+
+<button id="getstyle">Get CSS</button>
+
+<br><br>
+<p id="css-props"></p> */}
+
+
+
+const cssObject={
+	color:"black",
+  fontSize:"50px",
+  textDecoration:"none",
+  fontFamily:"sans-serif",
+  fontWeight:"normal",
+}
+
+
+// javascript code goes here
+const text=document.getElementById("text-container");  //Change
+const chnColor=document.querySelector("#colorchange");
+
+// changing color with input box
+chnColor.addEventListener("click",()=>{
+		const color=document.querySelector("#colorbox").value;
+    text.style.color=color;
+    cssObject.color=color;
+});
+
+//  working with slider
+const slider= document.getElementById("fontsize");
+slider.addEventListener("change",()=>{
+	text.style.fontSize=slider.value+"px";
+  cssObject.fontSize=slider.value+"px";
+});
+
+ //  text decorations
+function  chngTextDec(txt){
+		console.log(txt);
+ 		text.style.textDecoration=txt;
+    cssObject.textDecoration=txt;
+ }
+
+function  chngTextFamily(txt){
+		console.log(txt);
+ 		text.style.fontFamily=txt;
+    cssObject.fontFamily+=" "+txt;
+ }
+ 
+ function  chngTextWeight(txt){
+		console.log(txt);
+ 		text.style.fontWeight=txt;
+    cssObject.fontWeight=txt;
+ }
+ 
+ //   font style
+ function chngTextStyle(){
+ 		const sv=document.getElementById("list");
+    console.log(sv.value);
+ 		text.style.fontFamily=sv.value;
+    cssObject.fontFamily+=" "+sv.value;
+ }
+ 
+ //   get css
+ 
+ const getBtn=document.querySelector("#getstyle");
+ getBtn.addEventListener("click",()=>{
+ 			let csstxt="";
+      
+      for(const key in cssObject){
+					let value=cssObject[key];
+					csstxt+=key+" : "+value+",";
+      }
+      
+      
+      document.querySelector("#css-props").innerText=csstxt;
+ 			
+ })
+ 
+ 
